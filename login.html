@@ -1,62 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Log in</title>
-    <link rel="stylesheet" href="./login/style.css" />
-    <!-- Unicons -->
-    <link
-      rel="stylesheet"
-      href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
-    />
-  </head>
-  <body>
-    <!-- Home -->
-    <section class="home">
-      <div class="form_container">
-        <!-- Login From -->
-        <div class="form login_form">
-          <div id="logInForm">
-            <h2>Login</h2>
-            <hr />
-            <p>Welcome Back</p>
-            <p class="welcomeMessage">
-              Complete Miles of journy with one step.
-            </p>
-            <!-- Email -->
-            <div class="input_box">
-              <input
-                type="text"
-                placeholder="Email (example@mail.com)"
-                required
-                autocomplete="username"
-                id="logInInputEmail"
-              />
-              <i class="uil uil-envelope-alt email"></i>
-              <span id="loginEmailError">Error</span>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="./login/style.css">
+</head>
+<body>
+        <div class="container">
+            <div>
+                E-mail  <input id="inputEmail" type="text" name="email">
+                      <span id="errorEmail">error</span>
             </div>
-            <!-- Password -->
-            <div class="input_box">
-              <input
-                type="password"
-                placeholder="Enter your password"
-                required
-                autocomplete="new-password"
-                id="logInInputPassword"
-              />
-              <i class="uil uil-lock password"></i>
-              <i class="uil uil-eye-slash pw_hide"></i>
-              <span id="loginPasswordError">Error</span>
+            <div>
+                Password  <input id="inputPassword" type="password" name="password">
+                      <span id="errorPassword">error</span>
             </div>
-
-            <button class="button" id="logInNowBtn">Login Now</button>
-          </div>
+            <div class="btnFlex">        
+                <input id="stoping" type="submit" value = "submit">
+                <input id="reseting"type="reset" value = "reset">
+            </div>
         </div>
-      </div>
-    </section>
-
     <script src="./login/script.js"></script>
-  </body>
+</body>
 </html>

@@ -1,87 +1,43 @@
-/* Import Google font - Poppins */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-}
-.header {
-  height: 55px;
-  width: 100%;
-  background: linear-gradient(to right, #c06c84, #6c5b7b, #355c7d);
-}
-.nav {
-  width: 100%;
-  margin: 0 auto;
-  display: flex;
-  height: 100%;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0px 50px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 20px;
+    font-family: sans-serif;
 }
 
-.nav_logo,
-.button {
-  color: #fff;
-}
-.nav_logo {
-  font-size: 28px;
-}
-.button {
-  padding: 6px 20px;
-  border: 2px solid #fff;
-  background: transparent;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 18px;
-}
-.button:hover {
-  transform: scale(0.97);
-  color: #000000;
-}
+body {
+    background-image: url(./../betterLuckNextTime.jpg);
+    background-repeat: no-repeat;
+    background-position: 10vw center;
+    background-size: 40%;
 
-.main {
-  margin: auto;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 100vh;
+    margin: 0;
 }
 
 .container {
-  padding: 1rem;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(136, 129, 129, 0.1);
-  font-size: 1.4rem;
-  font-weight: bold;
-  background-color: rgb(245, 245, 245);
-  text-align: center;
-  width: 35%;
-}
-.container .userRes {
-  margin: 20px 0;
-}
-.userRes:not(:last-child) {
-  margin-bottom: 50px;
-}
-.imgContainer {
-  width: 45%;
-}
-.imgContainer img {
-  width: 90%;
+    width: 650px;
+    margin-right: 150px;
+
+    padding: 40px;
+    background: linear-gradient(to bottom, rgba(10, 134, 235, 0.3), rgba(102, 5, 141, 0.8)); 
+    border-radius: 10px;
+    box-shadow: 0 0 20px 0px rgb(36 1 46 / 28%);
 }
 
-@media (max-width: 800px) {
-  .main {
-    flex-direction: column;
-  }
-  .container {
-    margin-top: 30px;
-  }
-  .container,
-  .imgContainer {
-    width: 100%;
-    flex-grow: 0;
-  }
+.container {
+    color: black;
+    text-align: center;
 }
+.container h2 {
+    font-size: 35px;
+    font-family: 'Times New Roman', Times, serif;
+}
+.container h2:last-child {
+    color: red;
+}
+

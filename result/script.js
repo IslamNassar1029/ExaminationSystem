@@ -1,42 +1,53 @@
-// Selecting elements by their IDs
-let messHeader = document.getElementById("usermess");
-let userNameDiv = document.getElementById("userName");
-let userResultDiv = document.getElementById("userResult");
-let userGradeDiv = document.getElementById("userGrade");
-let backGroundImg = document.getElementById("backgroundimg");
-let logOutBtn = document.getElementById("logOut");
-
-// get student data
+var count=0;
+// get student data 
 const urlParams = new URLSearchParams(window.location.search);
-const email = urlParams.get("email");
+const email = urlParams.get('email');
 let studentsData = JSON.parse(localStorage.students);
-let currentstudent = studentsData.find((obj) => obj["email"] === email);
+var student = studentsData.find((obj) => obj["email"] === email);
+let detailsStudent=document.querySelector(".details");
 
-if (currentstudent.result > 5) {
-  messHeader.textContent = "Congratulations";
-  messHeader.style.color = "green";
-  userNameDiv.textContent = `${currentstudent.firstName}  ${currentstudent.lastName}`;
-  userResultDiv.textContent = `Result : ${currentstudent.result}/10`;
-  userResultDiv.style.color = "green";
-  userGradeDiv.textContent = `Grade : ${(currentstudent.result / 10) * 100}%`;
-  userGradeDiv.style.color = "green";
-} else if (currentstudent.result <= 5) {
-  messHeader.textContent = "Sorry!!";
-  messHeader.style.color = "red";
-  userNameDiv.textContent = `${currentstudent.firstName}  ${currentstudent.lastName}`;
-  userResultDiv.textContent = `Result : ${currentstudent.result}/10`;
-  userResultDiv.style.color = "red";
-  userGradeDiv.textContent = `Grade : ${(currentstudent.result / 10) * 100}%`;
-  userGradeDiv.style.color = "red";
-  backGroundImg.src = "./result/result2.png";
-}
-/*---------------------------------------------------------------------------*/
-logOutBtn.addEventListener("click", function () {
-  navigatToHome();
+let wrongQuestions=document.querySelector(".wrongQuestions");
+console.log(student.result);
+
+student.result.forEach(question => {
+    if (question.choosenAnsewr!=-1&&question.answers[question.choosenAnsewr].correct==true) {
+        count++
+    }else{
+        if(question.choosenAnsewr==-1){
+            wrongQuestions.innerHTML+=`<div class="wrongQuestion">
+            <h5>${question.title}</h5>
+            <p class="right">Right answer is ${rightAnswer}</p>
+            <p class="wrong">You didn't choose an answer</p>
+            </div>`
+        }else{
+            var rightAnswer;
+            for (let i = 0; i <question.answers.length ; i++) {
+                if (question.answers[i].correct==true) {
+                    rightAnswer = question.answers[i].answer;
+                }
+                
+            }
+            wrongQuestions.innerHTML+=`<div class="wrongQuestion">
+            <h5>${question.title}</h5>
+            <p class="right">Right answer is ${rightAnswer}</p>
+            <p class="wrong">Your wrong answer is ${question.answers[question.choosenAnsewr].answer}</p>
+            </div>`
+        }
+        
+    }
+    
 });
-/*---------------------------------------------------------------------------*/
-// Redirect the user to the Home page
-function navigatToHome() {
-  window.location.replace(`index.html`);
+if (count>=student.result.length/2) {
+    document.querySelector("body").classList.add("rightImage")
+    detailsStudent.innerHTML=`<h2 >Name is ${student.firstName} ${student.lastName}</h2>
+    <h2>Email is ${student.email}</h2>
+    <h2 class="right">Your result is ${count}/${student.result.length}</h2>`
+} else {
+    document.querySelector("body").classList.add("wrongImage")
+    detailsStudent.innerHTML=`<h2 >Name is ${student.firstName} ${student.lastName}</h2>
+    <h2>Email is ${student.email}</h2>
+    <h2 class="wrong">Your result is ${count}/${student.result.length}</h2>`
 }
-/*---------------------------------------------------------------------------*/
+
+
+

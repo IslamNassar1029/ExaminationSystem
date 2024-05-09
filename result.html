@@ -1,33 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Exam Result</title>
-    <link rel="stylesheet" href="./result/style.css" />
-  </head>
-  <body>
-    <!-------------------------------------------------------------------------->
-    <!-- Header -->
-    <header class="header">
-      <nav class="nav">
-        <p class="nav_logo">Exam Result</p>
-        <button class="button" id="logOut">Log out</button>
-      </nav>
-    </header>
-    <!-------------------------------------------------------------------------->
-    <div class="main">
-      <div class="container">
-        <h2 id="usermess"></h2>
-        <hr />
-        <div class="userRes" id="userName"></div>
-        <div class="userRes" id="userResult"></div>
-        <div class="userRes" id="userGrade"></div>
-      </div>
-      <div class="imgContainer">
-        <img src="./result/result1.jpg" alt="" id="backgroundimg" />
-      </div>
-    </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    <link rel="stylesheet" href="./result/style.css">
+</head>
+<body >
+        <div class="container">
+            <div class="details">
+                <!-- <h2 >name is <span></span></h2>
+                <h2>email is <span></span></h2>
+                <h2>passedOr faild<span></span></h2> -->
+            </div>
+            <div class="wrongQuestions">
+                <h3>The questions you got wrong. </h3>
+                <!-- <div class="wrongQuestion">
+            <h5>${question.title}</h5>
+            <p class="right">Right answer is ${rightAnswer}</p>
+            <p class="wrong">Your wrong answer is ${question.answers[question.choosenAnsewr].answer}</p>
+            </div> -->
+            </div>
+
+        </div>
     <script src="./result/script.js"></script>
-  </body>
+</body>
 </html>
